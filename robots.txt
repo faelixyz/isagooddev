@@ -1,0 +1,5 @@
+User-agent: Discordbot
+Disallow: *
+
+User-agent: Googlebot
+Allow: *
