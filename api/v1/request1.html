@@ -1,0 +1,36 @@
+<!-- Request to Server if IP Adress is reachable and then showing up a green button if yes and a red button if no. -->
+<!-- If the IP Adress is reachable, the user can click on the button and the server will send a request to the device. -->
+<!-- The device will then send a request to the server and the server will send a request to the device. -->
+<!-- The device will then send a request to the server and the server will send a request to the device. -->
+<!-- The device will then send a request to the server and the server will send a request to the device. -->
+<!-- The device will then send a request to the server and the server will send a request to the device. -->
+
+
+
+<faelixyz.com>
+    <html>
+        <head>
+            <title>Request 1</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <div class="button-state-if-offline">
+            <button class="button-state-if-offline" onclick="processRequest(e)">Request 1</button>
+        </div>
+        <div class="button-state-if-online">
+            <button class="button-state-if-online" onclick="processRequest(e)">Request 1</button>
+        </div>
+    </html>
+</faelixyz.com>
+
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://82.207.253.44', true);
+    xhr.send();
+    xhr.onreadystatechange = processRequest;
+    function processRequest(e) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response);
+        }
+    }
+</script>
